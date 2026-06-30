@@ -1,80 +1,25 @@
+'use client';
+import { useState } from 'react';
 import Navbar from '../components/Navbar';
 
-export default function Services() {
-  const services = [
-    {
-      title: "Web Development",
-      icon: "🌐",
-      description: "Modern, high-performance websites and web applications built with Next.js, React, and TypeScript.",
-      features: [
-        "Custom Web Applications",
-        "E-commerce Platforms",
-        "Landing Pages & SaaS Products",
-        "Progressive Web Apps (PWA)",
-        "Performance Optimization"
-      ]
-    },
-    {
-      title: "Data Pipelines & Backend",
-      icon: "📊",
-      description: "Robust data infrastructure and backend systems that handle large volumes of data efficiently.",
-      features: [
-        "ETL Data Pipelines",
-        "Database Architecture",
-        "API Development",
-        "Real-time Data Processing",
-        "Cloud Integration (AWS, Azure)"
-      ]
-    },
-    {
-      title: "AI & Machine Learning",
-      icon: "🤖",
-      description: "Intelligent solutions that leverage artificial intelligence to automate and optimize business processes.",
-      features: [
-        "Custom AI Models",
-        "Chatbots & Virtual Assistants",
-        "Predictive Analytics",
-        "Computer Vision",
-        "Recommendation Systems"
-      ]
-    },
-    {
-      title: "Mobile App Development",
-      icon: "📱",
-      description: "Native and cross-platform mobile applications for iOS and Android with excellent user experience.",
-      features: [
-        "React Native & Flutter",
-        "iOS & Android Apps",
-        "App Store Deployment",
-        "Push Notifications",
-        "Offline Functionality"
-      ]
-    },
-    {
-      title: "Cloud Solutions",
-      icon: "☁️",
-      description: "Scalable and secure cloud infrastructure to support your growing business needs.",
-      features: [
-        "Cloud Migration",
-        "Serverless Architecture",
-        "DevOps & CI/CD",
-        "Infrastructure as Code",
-        "Monitoring & Security"
-      ]
-    },
-    {
-      title: "Digital Transformation",
-      icon: "🚀",
-      description: "End-to-end consulting and implementation to help businesses modernize their technology stack.",
-      features: [
-        "Technology Strategy",
-        "System Integration",
-        "Process Automation",
-        "Team Training",
-        "Legacy System Modernization"
-      ]
-    }
-  ];
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    service: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert("Thank you! We've received your message and will get back to you within 24 hours.");
+    setFormData({ name: '', email: '', company: '', service: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   return (
     <>
@@ -85,60 +30,134 @@ export default function Services() {
         <section className="bg-gradient-to-br from-slate-950 to-zinc-950 text-white py-24 md:py-32">
           <div className="max-w-7xl mx-auto px-6 text-center">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
-              Our Services
+              Let's Build Something Great Together
             </h1>
             <p className="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto">
-              Comprehensive technology solutions tailored to help your business thrive in the digital world.
+              Have a project in mind? We're ready to discuss how we can help your business grow.
             </p>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-10">
-              {services.map((service, index) => (
-                <div key={index} className="bg-white border border-slate-200 rounded-3xl p-8 md:p-10 hover:border-blue-600 transition-all group">
-                  <div className="text-5xl md:text-6xl mb-6 transition-transform group-hover:scale-110 inline-block">
-                    {service.icon}
+        <div className="max-w-5xl mx-auto px-6 py-16 md:py-24">
+          <div className="grid md:grid-cols-12 gap-12">
+            
+            {/* Contact Form */}
+            <div className="md:col-span-7">
+              <div className="bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-sm">
+                <h2 className="text-3xl font-bold mb-8">Send us a Message</h2>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-slate-600 mb-2">Full Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-slate-600 mb-2">Email Address</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                      />
+                    </div>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold mb-5">{service.title}</h3>
-                  <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
-                    {service.description}
-                  </p>
-                  
+
                   <div>
-                    <h4 className="font-semibold text-slate-500 mb-4 uppercase tracking-widest text-sm">What We Deliver</h4>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-3 text-slate-700 text-base">
-                          <span className="text-green-500 mt-1.5">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <label className="block text-sm font-medium text-slate-600 mb-2">Company Name</label>
+                    <input 
+                      type="text" 
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-600 mb-2">Interested Service</label>
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    >
+                      <option value="">Select a Service</option>
+                      <option value="web">Web Development</option>
+                      <option value="data">Data Pipelines & Backend</option>
+                      <option value="ai">AI & Machine Learning</option>
+                      <option value="mobile">Mobile App Development</option>
+                      <option value="cloud">Cloud Solutions</option>
+                      <option value="consulting">Digital Transformation</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-600 mb-2">Project Details</label>
+                    <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={8}
+                      required
+                      className="w-full px-6 py-4 border border-slate-300 rounded-3xl focus:outline-none focus:border-blue-600"
+                      placeholder="Tell us about your project..."
+                    ></textarea>
+                  </div>
+
+                  <button 
+                    type="submit"
+                    className="w-full bg-black hover:bg-slate-800 text-white py-5 rounded-2xl font-semibold text-lg transition"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Side Info */}
+            <div className="md:col-span-5">
+              <div className="sticky top-28">
+                <div className="bg-slate-50 rounded-3xl p-10">
+                  <h3 className="text-2xl font-semibold mb-8">Get in Touch</h3>
+                  
+                  <div className="space-y-8">
+                    <div>
+                      <p className="text-slate-500 mb-1">Email</p>
+                      <a href="mailto:mohammadsharifazimy@gmail.com" className="text-blue-600 hover:underline text-lg font-medium">
+                        mohammadsharifazimy@gmail.com
+                      </a>
+                    </div>
+
+                    <div>
+                      <p className="text-slate-500 mb-1">Global Team</p>
+                      <p className="text-lg">Asia • America • Europe</p>
+                    </div>
                   </div>
                 </div>
-              ))}
+
+                <div className="mt-10 bg-white border border-slate-200 rounded-3xl p-10">
+                  <h4 className="font-semibold mb-6">Why Work With Us?</h4>
+                  <ul className="space-y-4 text-slate-600">
+                    <li>✓ Fast & professional response</li>
+                    <li>✓ Clear communication</li>
+                    <li>✓ Dedicated project manager</li>
+                    <li>✓ Quality focused delivery</li>
+                    <li>✓ Post-launch support</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-black text-white py-20 md:py-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
-            <p className="text-lg md:text-2xl text-slate-400 mb-10">
-              Let's discuss how we can help you achieve your technology goals.
-            </p>
-            <a 
-              href="/contact" 
-              className="inline-block bg-white text-black px-10 md:px-12 py-5 rounded-2xl font-semibold text-lg md:text-xl hover:bg-slate-100 transition"
-            >
-              Start Your Project →
-            </a>
-          </div>
-        </section>
+        </div>
       </div>
     </>
   );
