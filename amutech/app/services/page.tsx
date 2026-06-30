@@ -1,26 +1,28 @@
 import Navbar from '../components/Navbar';
 
 export default function Services() {
-  const services = [
-    { title: "Web Development", desc: "Modern web platforms using Next.js, React & TypeScript" },
-    { title: "Mobile Development", desc: "Native and cross-platform mobile applications" },
-    { title: "Cloud Solutions", desc: "AWS, Azure & scalable cloud architecture" },
-    { title: "AI Integration", desc: "Intelligent  features and automation" },
-  ];
-
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-white pt-20">
+      <div className="pt-20 bg-slate-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h1 className="text-6xl font-bold text-center mb-6">Our Services</h1>
-          <p className="text-center text-2xl text-slate-600 mb-16">Delivering excellence across the technology spectrum</p>
+          <div className="text-center mb-16">
+            <h1 className="text-6xl font-bold mb-6">Our Services</h1>
+            <p className="text-2xl text-slate-600">High-quality technology solutions tailored for your business</p>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {services.map((service, i) => (
-              <div key={i} className="border border-slate-200 rounded-3xl p-12 hover:border-blue-600 transition">
-                <h3 className="text-4xl font-semibold mb-6">{service.title}</h3>
-                <p className="text-xl text-slate-600">{service.desc}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              ["Web Development", "Modern websites and web apps using Next.js & React"],
+              ["Mobile Apps", "iOS and Android applications that users love"],
+              ["Cloud Solutions", "Scalable infrastructure on AWS and Azure"],
+              ["AI & Automation", "Smart solutions using latest AI technologies"],
+              ["UI/UX Design", "Beautiful and intuitive user interfaces"],
+              ["IT Consulting", "Strategic technology advice and planning"]
+            ].map(([title, desc], i) => (
+              <div key={i} className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-xl transition">
+                <h3 className="text-3xl font-semibold mb-4">{title}</h3>
+                <p className="text-slate-600">{desc}</p>
               </div>
             ))}
           </div>
