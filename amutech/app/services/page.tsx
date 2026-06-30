@@ -80,7 +80,7 @@ export default function Services() {
     <>
       <Navbar />
 
-      <div className="pt-20 bg-white">
+      <div className="pt-0 bg-white">
         {/* Hero */}
         <section className="bg-gradient-to-br from-slate-950 to-zinc-950 text-white py-24 md:py-32">
           <div className="max-w-7xl mx-auto px-6 text-center">
