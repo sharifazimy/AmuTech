@@ -20,14 +20,14 @@ export default function Team() {
       name: "Sahar Sahehi",
       role: "Program & Project Manager",
       location: "Global",
-      description: "Oversees project planning, timelines, and cross-functional coordination.",
+      description: "Oversees project financial and implementation planning, timelines, and cross-functional coordination.",
       gender: "female"
     },
     {
       name: "Suhaila Sahak",
-      role: "Global Administration Manager",
+      role: "Administration Manager",
       location: "Global",
-      description: "Handles internal operations, team coordination, documentation, and administrative processes.",
+      description: "Handles regulatory compliance, documentation and administrative processes.",
       gender: "female"
     },
     {
