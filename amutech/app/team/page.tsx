@@ -6,42 +6,42 @@ export default function Team() {
       name: "Mohammad Sharif Azimy",
       role: "Founder & Full Stack Developer",
       location: "Global",
-      description: "Visionary leader and experienced full-stack developer driving AmuTech's technical direction and strategy.",
+      description: "Leads overall strategy, architecture, and full-stack development.",
       gender: "male"
     },
     {
       name: "Zahra Azimy",
-      role: "DevOps Engineer",
+      role: "DevOps & Cloud Engineer",
       location: "Europe / Germany",
-      description: "Expert in cloud infrastructure, automation, and CI/CD pipelines ensuring reliable and scalable systems.",
+      description: "Manages cloud infrastructure, automation, and deployment pipelines.",
       gender: "female"
     },
     {
       name: "Sahar Sahehi",
-      role: "Program Manager",
-      location: "America",
-      description: "Skilled program manager overseeing project delivery and ensuring smooth collaboration across teams.",
+      role: "Program & Project Manager",
+      location: "Global",
+      description: "Oversees project financial planning, implementation, timelines, and cross-functional coordination.",
       gender: "female"
     },
     {
       name: "Suhaila Sahak",
-      role: "Customer Success Manager",
+      role: "Administration Manager",
       location: "Global",
-      description: "Dedicated to providing exceptional client experience and ensuring long-term customer satisfaction.",
+      description: "Internal process management.",
       gender: "female"
     },
     {
       name: "Zohra Veedy",
       role: "Software Engineer",
       location: "America",
-      description: "Passionate software engineer focused on building high-quality, maintainable applications.",
+      description: "Focuses on frontend development and building exceptional user interfaces.",
       gender: "female"
     },
     {
       name: "Monir Hakimi",
       role: "Backend Developer",
       location: "Asia",
-      description: "Specialized in backend development, databases, and building robust server-side solutions.",
+      description: "Specializes in backend systems, databases, APIs, and server architecture.",
       gender: "male"
     }
   ];
@@ -58,7 +58,7 @@ export default function Team() {
               Meet Our Team
             </h1>
             <p className="text-2xl text-slate-400 max-w-3xl mx-auto">
-              A diverse and passionate global team working together to deliver exceptional technology solutions.
+              A passionate global team delivering excellence across continents.
             </p>
           </div>
         </section>
@@ -68,19 +68,18 @@ export default function Team() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               {teamMembers.map((member, index) => (
-                <div key={index} className="group">
-                  {/* Image Placeholder */}
-                  <div className="aspect-square bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl mb-6 flex items-center justify-center overflow-hidden border border-slate-200 group-hover:border-blue-200 transition-all">
-                    <div className="text-8xl opacity-30">
+                <div key={index} className="group text-center">
+                  <div className="w-28 h-28 mx-auto bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl mb-6 flex items-center justify-center border border-slate-200 group-hover:border-blue-200 transition-all">
+                    <span className="text-5xl opacity-40">
                       {member.gender === "female" ? "👩🏻‍💼" : "👨🏻‍💻"}
-                    </div>
+                    </span>
                   </div>
 
                   <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
                   <p className="text-blue-600 font-medium mb-1">{member.role}</p>
-                  <p className="text-sm text-slate-500 mb-4">{member.location}</p>
+                  <p className="text-sm text-slate-500 mb-6">{member.location}</p>
                   
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed px-4">
                     {member.description}
                   </p>
                 </div>
@@ -89,12 +88,12 @@ export default function Team() {
           </div>
         </section>
 
-        {/* Global Message */}
+        {/* Global Operations */}
         <section className="bg-slate-50 py-20">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold mb-6">One Team. Global Strength.</h2>
+            <h2 className="text-4xl font-bold mb-8">Global Team. Seamless Execution.</h2>
             <p className="text-xl text-slate-600">
-              With team members across Asia, America, and Europe, we bring diverse expertise and work seamlessly across time zones to deliver outstanding results.
+              From development to operations and client relations, our distributed team works efficiently across time zones to deliver consistent, high-quality results.
             </p>
           </div>
         </section>
