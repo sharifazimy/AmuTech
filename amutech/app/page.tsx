@@ -6,6 +6,7 @@ export default function Home() {
     <>
       <Navbar />
 
+      {/* Full Screen Hero */}
       <section className="min-h-screen bg-gradient-to-br from-slate-950 to-zinc-950 text-white flex items-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:50px_50px]"></div>
         
