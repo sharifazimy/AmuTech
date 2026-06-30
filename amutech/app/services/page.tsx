@@ -5,7 +5,7 @@ export default function Services() {
     { title: "Web Development", desc: "Modern web platforms using Next.js, React & TypeScript" },
     { title: "Mobile Development", desc: "Native and cross-platform mobile applications" },
     { title: "Cloud Solutions", desc: "AWS, Azure & scalable cloud architecture" },
-    { title: "AI Integration", desc: "Intelligent features and automation" },
+    { title: "AI Integration", desc: "Intelligent  features and automation" },
   ];
 
   return (
