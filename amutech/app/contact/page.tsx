@@ -3,40 +3,150 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    service: '',
+    message: ''
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you! We'll get back to you soon.");
-    setFormData({ name: '', email: '', message: '' });
+    alert("Thank you! We've received your message and will get back to you within 24 hours.");
+    setFormData({ name: '', email: '', company: '', service: '', message: '' });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-slate-50 pt-20">
-        <div className="max-w-2xl mx-auto px-6 py-20">
-          <h1 className="text-6xl font-bold text-center mb-12">Let's Build Something Great</h1>
-          
-          <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-12 shadow-xl">
-            <div className="space-y-8">
+
+      <div className="pt-20 bg-white">
+        {/* Hero */}
+        <section className="bg-gradient-to-br from-slate-950 to-zinc-950 text-white py-28">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6">
+              Let's Build Something Great Together
+            </h1>
+            <p className="text-2xl text-slate-400 max-w-3xl mx-auto">
+              Have a project in mind? We're ready to discuss how we can help your business grow.
+            </p>
+          </div>
+        </section>
+
+        <div className="max-w-5xl mx-auto px-6 py-20">
+          <div className="grid md:grid-cols-5 gap-16">
+            
+            {/* Contact Form */}
+            <div className="md:col-span-3">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-600 mb-2">Full Name</label>
+                    <input 
+                      type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-600 mb-2">Email Address</label>
+                    <input 
+                      type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-600 mb-2">Company Name</label>
+                  <input 
+                    type="text" 
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-600 mb-2">What Service Are You Interested In?</label>
+                  <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                  >
+                    <option value="">Select a Service</option>
+                    <option value="web">Web Development</option>
+                    <option value="data">Data Pipelines & Backend</option>
+                    <option value="ai">AI & Machine Learning</option>
+                    <option value="mobile">Mobile App Development</option>
+                    <option value="cloud">Cloud Solutions</option>
+                    <option value="consulting">Digital Transformation</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-slate-600 mb-2">Project Details / Message</label>
+                  <textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={8}
+                    required
+                    className="w-full px-6 py-4 border border-slate-300 rounded-3xl focus:outline-none focus:border-blue-600"
+                    placeholder="Tell us about your project..."
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit"
+                  className="w-full bg-black text-white py-5 rounded-2xl font-semibold text-lg hover:bg-slate-800 transition"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Info */}
+            <div className="md:col-span-2 space-y-10 pt-8">
               <div>
-                <label className="block text-sm mb-2">Name</label>
-                <input type="text" className="w-full border border-slate-300 rounded-2xl px-6 py-4" required />
+                <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
+                <div className="space-y-6 text-lg">
+                  <p>
+                    <strong>Email:</strong><br />
+                    <a href="mailto:hello@amutech.com" className="text-blue-600 hover:underline">hello@amutech.com</a>
+                  </p>
+                  <p>
+                    <strong>Global Team</strong><br />
+                    Asia • America • Europe
+                  </p>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm mb-2">Email</label>
-                <input type="email" className="w-full border border-slate-300 rounded-2xl px-6 py-4" required />
-              </div>
-              <div>
-                <label className="block text-sm mb-2">Message</label>
-                <textarea rows={8} className="w-full border border-slate-300 rounded-3xl px-6 py-4" required></textarea>
+
+              <div className="bg-slate-50 p-8 rounded-3xl">
+                <h4 className="font-semibold mb-4">Why Work With Us?</h4>
+                <ul className="space-y-4 text-slate-600">
+                  <li>✓ Fast response time</li>
+                  <li>✓ Transparent process</li>
+                  <li>✓ Dedicated project manager</li>
+                  <li>✓ 30-day post-launch support</li>
+                </ul>
               </div>
             </div>
-            <button type="submit" className="mt-10 w-full bg-blue-600 text-white py-5 rounded-2xl text-lg font-semibold hover:bg-blue-700">
-              Send Message
-            </button>
-          </form>
+          </div>
         </div>
       </div>
     </>
