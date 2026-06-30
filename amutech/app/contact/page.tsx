@@ -27,19 +27,19 @@ export default function Contact() {
 
       <div className="pt-20 bg-white">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-slate-950 to-zinc-950 text-white py-28">
+        <section className="bg-gradient-to-br from-slate-950 to-zinc-950 text-white py-24 md:py-32">
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <h1 className="text-6xl md:text-7xl font-bold tracking-tighter mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6">
               Let's Build Something Great Together
             </h1>
-            <p className="text-2xl text-slate-400 max-w-3xl mx-auto">
+            <p className="text-lg md:text-2xl text-slate-300 max-w-3xl mx-auto">
               Have a project in mind? We're ready to discuss how we can help your business grow.
             </p>
           </div>
         </section>
 
-        <div className="max-w-5xl mx-auto px-6 py-20">
-          <div className="grid md:grid-cols-5 gap-16">
+        <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-5 gap-12 md:gap-16">
             
             {/* Contact Form */}
             <div className="md:col-span-3">
@@ -53,7 +53,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600 text-base"
                     />
                   </div>
                   <div>
@@ -64,7 +64,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                      className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600 text-base"
                     />
                   </div>
                 </div>
@@ -76,17 +76,17 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600 text-base"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-slate-600 mb-2">What Service Are You Interested In?</label>
+                  <label className="block text-sm font-medium text-slate-600 mb-2">Interested Service</label>
                   <select 
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600"
+                    className="w-full px-6 py-4 border border-slate-300 rounded-2xl focus:outline-none focus:border-blue-600 text-base"
                   >
                     <option value="">Select a Service</option>
                     <option value="web">Web Development</option>
@@ -104,9 +104,9 @@ export default function Contact() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={8}
+                    rows={7}
                     required
-                    className="w-full px-6 py-4 border border-slate-300 rounded-3xl focus:outline-none focus:border-blue-600"
+                    className="w-full px-6 py-4 border border-slate-300 rounded-3xl focus:outline-none focus:border-blue-600 text-base"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
@@ -121,13 +121,15 @@ export default function Contact() {
             </div>
 
             {/* Contact Info */}
-            <div className="md:col-span-2 space-y-10 pt-8">
+            <div className="md:col-span-2 space-y-10 pt-4 md:pt-8">
               <div>
                 <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
-                <div className="space-y-6 text-lg">
+                <div className="space-y-6 text-base md:text-lg">
                   <p>
                     <strong>Email:</strong><br />
-                    <a href="mailto:hello@amutech.com" className="text-blue-600 hover:underline">hello@amutech.com</a>
+                    <a href="mailto:mohammadsharifazimy@gmail.com" className="text-blue-600 hover:underline">
+                      mohammadsharifazimy@gmail.com
+                    </a>
                   </p>
                   <p>
                     <strong>Global Team</strong><br />
@@ -137,12 +139,12 @@ export default function Contact() {
               </div>
 
               <div className="bg-slate-50 p-8 rounded-3xl">
-                <h4 className="font-semibold mb-4">Why Work With Us?</h4>
+                <h4 className="font-semibold mb-4">Why Choose Us?</h4>
                 <ul className="space-y-4 text-slate-600">
                   <li>✓ Fast response time</li>
-                  <li>✓ Transparent process</li>
+                  <li>✓ Transparent communication</li>
                   <li>✓ Dedicated project manager</li>
-                  <li>✓ 30-day post-launch support</li>
+                  <li>✓ Quality focused delivery</li>
                 </ul>
               </div>
             </div>
