@@ -17,7 +17,7 @@ export default function Team() {
       gender: "female"
     },
     {
-      name: "Sahar Sahehi",
+      name: "Sahar Salehi",
       role: "Program & Project Manager",
       location: "Global",
       description: "Oversees project financial and implementation planning, timelines, and cross-functional coordination.",
